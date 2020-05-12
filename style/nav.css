@@ -1,0 +1,19 @@
+.logowrap img{
+  width: 60px;
+  height: 60px;
+}
+
+.links li{
+  font-size: 23px;
+  font-weight: bold;
+  color: black;
+}
+
+.nav-link{
+  text-decoration: none;
+  color: black;
+}
+
+.logowrap{
+  padding-right: 10px;
+}

@@ -1,0 +1,31 @@
+/*
+Theme Name: PROJECT
+Author: Perfectti
+Description: Tema para proyecto del ciclo ASIR
+Version: 0.1
+*/
+
+@import "style/fuente.css";
+@import "style/nav.css";
+@import "style/posts.css";
+
+body, *{
+  margin: 0;
+  padding: 0;
+  font-family: 'Sen', sans-serif;
+}
+
+.copyright{
+  text-align: center;
+}
+
+.destacado{
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+/* ARCHIVE.PHP */
+
+.titlelink {
+  color: black;
+}
