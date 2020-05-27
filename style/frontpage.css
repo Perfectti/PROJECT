@@ -1,0 +1,80 @@
+/* .cardcontainer{
+  text-align: center;
+} */
+
+/* .postsc{
+  display: inline;
+} */
+
+.containerdest{
+  background-image: url("../img/fp2.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.pdest{
+  font-size: 27px;
+}
+
+.postdest{
+  position: relative;
+  text-align: center;
+}
+
+.titlelink{
+  display: block;
+  color: white;
+  text-decoration: none;
+}
+
+.titlelink:hover{
+  color: white;
+}
+
+.titlpost{
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+  padding-bottom: 20px;
+  padding-left: 5px;
+}
+
+.degradado{
+  /* background: -prefix-linear-gradient(top, blue, white);
+  background: linear-gradient(to bottom, blue, white); */
+}
+
+.transblack{
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.contcontact{
+  text-align: center;
+  /* background-color: grey; */
+  background-image: url("../img/fp3.jpg");
+  background-attachment: fixed;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.divcont{
+  font-size: 32px;
+  color: white;
+}
+
+.tocontact{
+  color: white;
+  font-size: 26px;
+  background: transparent;
+  border: 3px solid #e0e0e0;
+}
+
+.tocontact:hover{
+  color: black;
+  font-size: 26px;
+  background: #e0e0e0;
+  border: 3px solid #e0e0e0;
+}

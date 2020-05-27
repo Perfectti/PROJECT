@@ -6,13 +6,28 @@ Version: 0.1
 */
 
 @import "style/fuente.css";
+@import "style/index.css";
+@import "style/frontpage.css";
 @import "style/nav.css";
 @import "style/posts.css";
+@import "style/search.css";
+@import "style/single.css";
 
-body, *{
+
+*{
   margin: 0;
   padding: 0;
   font-family: 'Sen', sans-serif;
+  /* background-image: url("img/bck.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: 1920px 1080px; */
+}
+
+body, html{
+  width: 100%;
+  height: 100%;
 }
 
 .copyright{
@@ -24,8 +39,37 @@ body, *{
   margin-top: 30px;
 }
 
-/* ARCHIVE.PHP */
+/* FORMULARIO DE BUSQUEDA */
 
-.titlelink {
-  color: black;
+#buscform label{
+  font-size: 26px;
+  color: white;
+}
+
+
+#busctext{
+  font-size: 30px;
+  border-radius: 14px;
+  border-color: #F75C03;
+  border-style: solid;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#botonbusc{
+  background-color: #F75C03;
+  color: white;
+}
+
+.sform{
+  background-image: url("img/fp1.jpg");
+  height: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.prueba{
+
 }

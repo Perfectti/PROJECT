@@ -1,10 +1,11 @@
 <?php
 
-// Añade JQuery, Bootstrap.js/css/min.css y mi archivo de style propio
+// Opciones del tema
 
-// function agrega_jq(){
-//   wp_enqueue_script('jquery');
-// }
+add_theme_support('menus');
+add_theme_support('post-thumbnails');
+
+// Añade JQuery, Bootstrap.js/css/min.css y mi archivo de style propio
 
 function agrega_bjs(){
   wp_enqueue_script('jquery');
@@ -32,13 +33,17 @@ function agrega_css(){
 }
 add_action('wp_enqueue_scripts', 'agrega_css');
 
+function agrega_js(){
+  wp_register_script('js', get_template_directory_uri()."/js/script.js");
+  wp_enqueue_script('js');
+}
+add_action('wp_enqueue_scripts', 'agrega_js');
+
 // Añade un fichero para usar bootstrap con la siguiente función de abajo
 
 require_once('wp-bootstrap-navwalker.php');
 
 // Habilita una zona para que el usuario cree un menu
-
-add_theme_support('menus');
 
 register_nav_menus(
 
@@ -47,11 +52,6 @@ register_nav_menus(
   )
 
 );
-
-// function register_my_menu() {
-// register_nav_menu('menuprincipal',__( 'Menu Principal' ));
-// }
-// add_action( 'init', 'register_my_menu' );
 
 // Logo personalizado
 
@@ -66,5 +66,24 @@ function themename_custom_logo_setup() {
  add_theme_support( 'custom-logo', $defaults );
 }
 add_action( 'after_setup_theme', 'themename_custom_logo_setup' );
+
+// Esto es una mierda
+// function nextpage_style($nextplink){
+//   $nextplink = '<a class="linkbutton">'.$nextplink.'</a>';
+//   return $nextplink;
+// }
+// add_filter('get_next_posts_link','nextpage_style');
+
+
+
+// function limitar_tags($terms){
+//   return array_slice($terms,0,3,true);
+// }
+// add_filter('term_links-post_tag','limitar_tags');
+
+
+//Imagenes
+add_image_size('blog-grande', 1280, 960, false);
+add_image_size('blog-pequeño', 300, 200, true);
 
  ?>

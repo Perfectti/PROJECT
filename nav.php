@@ -5,7 +5,6 @@
          the_custom_logo();
          }
     ?>
-
      </div>
      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarcoll">
        <span class="navbar-toggler-icon"></span>
@@ -22,4 +21,11 @@
         )
       );
     ?>
+
+    <!-- <div class="buscar">
+      <?php
+      // get_search_form();
+      ?>
+    </div> -->
+
 </nav>
