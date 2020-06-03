@@ -1,0 +1,8 @@
+.formcont{
+  display: inline;
+  background-color: red;
+}
+
+.formcont input{
+  display: inline;
+}

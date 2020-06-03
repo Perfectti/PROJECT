@@ -1,0 +1,25 @@
+.comlista{
+  background-color: white;
+}
+
+.comlista li{
+  border-bottom: 2px solid black;
+  margin-top: 10px;
+}
+
+.comment-form-comment{
+  display: block;
+}
+
+#comm{
+  resize: none;
+  width: 100%;
+  height: 150px;
+  border: 3px solid #007bff;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.form-submit{
+  text-align: center;
+}

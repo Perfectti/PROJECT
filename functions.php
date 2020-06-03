@@ -34,7 +34,7 @@ function agrega_css(){
 add_action('wp_enqueue_scripts', 'agrega_css');
 
 function agrega_js(){
-  wp_register_script('js', get_template_directory_uri()."/js/script.js");
+  wp_register_script('js', get_template_directory_uri()."/js/script.js", false, 1.1, true);
   wp_enqueue_script('js');
 }
 add_action('wp_enqueue_scripts', 'agrega_js');
@@ -85,5 +85,72 @@ add_action( 'after_setup_theme', 'themename_custom_logo_setup' );
 //Imagenes
 add_image_size('blog-grande', 1280, 960, false);
 add_image_size('blog-pequeño', 300, 200, true);
+
+
+// Funcion para excluir categorias por el slug
+
+function excluir_cat( $taxonomy = 'category', $args = [], $exclude = [] )
+{
+    if ( empty( $exclude ) || !is_array( $exclude ) )
+        return get_terms( $taxonomy, $args );
+
+    foreach ( $exclude as $value ) {
+
+            $term_objects = get_term_by( 'slug', $value, $taxonomy );
+            $term_ids[] = (int) $term_objects->term_id;
+
+    }
+
+    $excluded_ids = [
+        'exclude' => $term_ids
+    ];
+
+    $merged_arguments = array_merge( $args, $excluded_ids );
+
+    $terms = get_terms( $taxonomy, $merged_arguments );
+
+    return $terms;
+}
+
+//Coge los post "sticky" (destacados) y con un shortcode podemos ponerlos en el front-page
+function destacados(){
+
+  $destacados = get_option('sticky_posts');
+
+  rsort($destacados);
+
+  $destacados = array_slice($destacados, 0, 3);
+
+  $sql = new WP_Query (array(
+    'post__in' => $destacados,
+    'ignore_sticky_posts' => 1
+  ));
+
+  if ($sql->have_posts()){
+    while($sql->have_posts()){
+      $sql->the_post();
+
+      $src =  get_the_ID();
+      $imagen = wp_get_attachment_image_src( get_post_thumbnail_id($src), 'blog-grande' );
+
+      $return .= '<div class="col-sm-12 col-md-4 mt-5 mb-5">
+                    <a href="' .get_permalink(). '" class="titlelink">
+                      <div class="postdest">
+                        <img src="' .$imagen[0]. '" alt="' .get_the_title(). '"
+                        class="img-fluid mb-3 img-thumbnail imgdest">
+                        <div class="titlpost"><h3>' .get_the_title(). '</h3></div>
+                      </div>
+                    </a>
+                  </div>';
+    }
+}else{
+  echo "No hay post que mostrar";
+}
+wp_reset_postdata();
+
+return $return;
+}
+add_shortcode('dest', 'destacados');
+
 
  ?>

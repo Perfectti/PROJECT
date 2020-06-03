@@ -22,7 +22,7 @@ get_header();
 
           <p><?php echo get_the_date("d/m/Y h:i"); ?></p>
 
-          <?php the_content(); ?>
+          <p class="text-justify"><?php the_content(); ?></p>
 
           <br>
           <hr id="separadorsing">
@@ -39,8 +39,11 @@ get_header();
               $apellido = get_the_author_meta('last_name');
               ?>
 
-              <p class="float-left mr-2 pr-2 border-right border-dark singlep">Autor:
-                <?php echo $nombre; ?> <?php echo $apellido; ?>
+              <p class="float-left mr-2 pr-2 border-right border-dark singlep">
+                Autor:
+                  <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>">
+                    <?php echo $nombre; ?> <?php echo $apellido; ?>
+                  </a>
               </p>
 
             </div>
@@ -67,29 +70,35 @@ get_header();
 
               <div class="float-left ml-1">
 
-                <p class="singlep">Tags:</p>
+
 
                 <?php
                   $tags = get_the_tags('',' ');
+                  if (!$tags):
+
+                  else:
+                  ?>
+                  <p class="singlep">Tags:</p>
+                  <?php
                   foreach ($tags as $tag):?>
 
-                    <a href="<?php echo get_tag_link($tag->term_id);?>" class="badge badge-light">
+                    <a href="<?php echo get_tag_link($tag->term_id);?>" class="badge badge-success">
                       <?php echo $tag->name;?>
                     </a>
-                <?php endforeach; ?>
+                <?php endforeach; endif;?>
 
                 </div>
             </div>
 
-            <!-- Comentarios -->
-            <div class="float-right">
+        </div>
+        <!-- Comentarios -->
+        <div class="row">
 
 
-                <?php
-                  // comments_template();
-                ?>
+            <?php
+              comments_template();
+            ?>
 
-            </div>
         </div>
       </div>
 

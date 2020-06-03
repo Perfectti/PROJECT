@@ -6,6 +6,10 @@
   display: inline;
 } */
 
+#bsalert{
+ position: absolute;
+}
+
 .containerdest{
   background-image: url("../img/fp2.jpg");
   background-attachment: fixed;
@@ -14,8 +18,12 @@
   background-size: cover;
 }
 
-.pdest{
+.pfp{
   font-size: 27px;
+}
+
+.tfp{
+  background-color: #333;
 }
 
 .postdest{
@@ -69,12 +77,52 @@
   color: white;
   font-size: 26px;
   background: transparent;
-  border: 3px solid #e0e0e0;
+  border: 3px solid white;
 }
 
 .tocontact:hover{
   color: black;
   font-size: 26px;
-  background: #e0e0e0;
-  border: 3px solid #e0e0e0;
+  background: white;
+  border: 3px solid white;
 }
+
+.autcard{
+  margin: 20px 20px 0px;
+  color: black;
+  text-decoration: none;
+}
+
+.autcard:hover{
+  color: black;
+  text-decoration: none;
+}
+
+.titaut{
+  margin: auto;
+  border: 0;
+  clear:both;
+  display:block;
+  width: 30%;
+  background-color:black;
+  height: 3px;
+}
+
+.titaut2{
+  margin: auto;
+  border: 0;
+  clear:both;
+  display:block;
+  width: 50%;
+  background-color:black;
+  height: 3px;
+}
+
+.imagenaut{
+  width: 150px;
+  height: 150px;
+}
+
+/* .categorias{
+  background-image: url("../img/cat.jpg");
+} */
