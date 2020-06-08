@@ -14,3 +14,16 @@
   background-color:black;
   height: 3px;
 }
+
+#separadorsingaut{
+  border: 0;
+  clear:both;
+  display:block;
+  width: 70%;
+  background-color:black;
+  height: 1px;
+}
+
+.singleh1{
+  font-size: 60px;
+}

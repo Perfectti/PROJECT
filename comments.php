@@ -7,15 +7,18 @@
 
   $commargs = array(
     'label_submit' => 'Enviar',
-    'comment_field' => '<p class="comment-form-comment"><textarea id="comm" name="comment" placeholder="Escribe aquí tu comentario..."></textarea></p>',
+    'comment_field' => '<textarea id="comm" name="comment" placeholder="Escribe aquí tu comentario..."></textarea>',
     'id_submit' => 'commsub',
     'class_submit' => 'btn btn-primary rounded-pill',
     'logged_in_as' => '<p class="loggedas">Conectado como '.$current_user->user_login.'</p>'
 
   );
 
-  comment_form($commargs); ?>
 
+?>
+<?php
+ comment_form($commargs);
+?>
   <?php if (have_comments()):?>
 
     <h2 class="comtitulo">

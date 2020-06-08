@@ -7,28 +7,34 @@ get_header();
       <?php get_template_part("nav"); ?>
   </header>
 
-<div class="mt-5 container">
+<div class="mt-5 container-fluid">
 
-      <?php if(has_post_thumbnail()): ?>
+      <div class="row">
+        <div class="col-md-6 offset-md-2">
+            <?php if(has_post_thumbnail()): ?>
 
-          <img src="<?php the_post_thumbnail_url('blog-grande');?>" alt="<?php the_title();?>" class="img-fluid mb-3 img-thumbnail">
+                <img src="<?php the_post_thumbnail_url('blog-grande');?>" alt="<?php the_title();?>" class="img-fluid mb-3 img-thumbnail">
 
-      <?php endif; ?>
+            <?php endif; ?>
+
+            <?php if (have_posts()): while (have_posts()): the_post();?>
+
+                <h1 class="singleh1"><strong><?php the_title(); ?></strong></h1>
+                <p><?php echo get_the_date("d/m/Y h:i"); ?></p>
+                <hr id="separadorsing">
+
+                <p><?php the_content(); ?></p>
 
 
-      <h1><?php the_title(); ?></h1>
+            <hr id="separadorsingaut">
+          </div>
+          <div class="col-md-3 offset-1 pagewrapside">
+            <?php get_sidebar(); ?>
+          </div>
+        </div>
 
-      <?php if (have_posts()): while (have_posts()): the_post();?>
-
-          <p><?php echo get_the_date("d/m/Y h:i"); ?></p>
-
-          <p class="text-justify"><?php the_content(); ?></p>
-
-          <br>
-          <hr id="separadorsing">
-
-          <div class="container">
-            <div class="row">
+          <div class="row">
+            <div class="col-md-6 offset-md-2 mb-3">
               <div class="float-left">
 
 
@@ -88,18 +94,19 @@ get_header();
                 <?php endforeach; endif;?>
 
                 </div>
-            </div>
+              </div>
+          </div>
 
-        </div>
         <!-- Comentarios -->
         <div class="row">
-
-
+          <div class="col-md-8 offset-md-2">
             <?php
-              comments_template();
+               comments_template();
+               // comment_form();
             ?>
-
+            </div>
         </div>
+
       </div>
 
           <!-- <br><br> -->

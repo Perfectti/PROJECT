@@ -1,0 +1,58 @@
+.pagewrapside{
+  /* position: relative; */
+}
+
+.sidewrap{
+  background-color: #dce0d9;
+  border-radius: 4px;
+  padding: 10px 20px;
+  /* position: fixed; */
+}
+
+.searchformside{
+  text-align: center;
+}
+
+#formbuscside label{
+  font-size: 18px;
+  color: black;
+}
+
+
+#busctextside{
+  font-size: 15px;
+  border-radius: 14px;
+  border-color: white;
+  border-style: solid;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#botonbuscside{
+  text-align: center;
+  background-color: #F75C03;
+  color: white;
+  width: 50px;
+  height: 25px;
+  font-size: 10px;
+}
+
+.titlside{
+  font-size: 15px;
+}
+
+.destrow td{
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 8px;
+}
+
+.linkdestside{
+  color: black;
+}
+
+.sidehr{
+  width: 35%;
+  height: 1px;
+  margin: auto;
+}

@@ -16,6 +16,16 @@ jQuery(document).ready(function(){
   })
 });
 
+jQuery(document).ready(function(){
+  jQuery("#botonbuscside").attr('disabled',true);
+  jQuery("#busctextside").keyup(function(){
+    if(jQuery(this).val().length !=0)
+      jQuery("#botonbuscside").attr('disabled',false);
+    else
+      jQuery("#botonbuscside").attr('disabled',true);
+  })
+});
+
 
 // jQuery(document).ready(function(){
 //   jQuery("#commsub").attr('disabled',true);
